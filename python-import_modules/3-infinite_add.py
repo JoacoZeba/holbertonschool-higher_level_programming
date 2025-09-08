@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 import sys
 
+if __name__ == '__main__':
+    av = sys.argv
+    l_av = len(av)
+    sum = 0
 
-def infinite_add():
-    av = sys.argv[1:]
-    addition = 0
+    if l_av > 1:
+        for i in range(1, l_av):
+            sum += int(av[i])
 
-    for num in av:
-        addition += int(num)
-
-    print(addition)
-
-
-if __name__ == "__main__":
-    infinite_add()
+    print(sum)
