@@ -1,0 +1,60 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> geometry_checker = BaseGeometry()
+
+>>> geometry_checker.integer_validator("Square", 5)
+
+>>> geometry_checker.integer_validator("Square", "5")
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", (5,))
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", None)
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", True)
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", [3])
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", {4, 8})
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", -6)
+Traceback (most recent call last):
+    ...
+ValueError: Square must be greater than 0
+
+>>> geometry_checker.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> geometry_checker.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> geometry_checker.integer_validator("Square")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> geometry_checker.integer_validator("Square", 0)
+Traceback (most recent call last):
+    ...
+ValueError: Square must be greater than 0
