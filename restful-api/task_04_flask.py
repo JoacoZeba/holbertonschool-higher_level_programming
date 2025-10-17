@@ -1,7 +1,4 @@
-#!/usr/bin/python3
-
 from flask import Flask, jsonify, request
-
 
 app = Flask(__name__)
 
@@ -30,8 +27,8 @@ def get_user(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-
     username = data.get("username")
+
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
@@ -48,4 +45,4 @@ def add_user():
     }), 201
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="127.0.0.1", port=5000)
