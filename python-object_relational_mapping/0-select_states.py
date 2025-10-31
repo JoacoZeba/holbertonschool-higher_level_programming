@@ -1,32 +1,39 @@
 #!/usr/bin/python3
-"""Module"""
-import MySQLdb
-import sys
+
+"""
+This script connects to a MySQL database and retrieves all rows
+from the 'states' table, ordered by their ID in ascending order.
+
+Usage:
+    ./script_name.py <username> <password> <database_name>
+
+Example:
+    ./0-select_states.py root mypassword hbtn_0e_0_usa
+
+Modules:
+    sys - to retrieve command-line arguments
+    MySQLdb - to connect and interact with a MySQL database
+"""
 
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    import sys
+    import MySQLdb
 
-    try:
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=mysql_username,
-            passwd=mysql_password,
-            db=database_name
-        )
-        cursor = db.cursor()
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        states = cursor.fetchall()
+    av = sys.argv[1:]
 
-        for state in states:
-            print(state)
-
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL: {e}")
-
-    finally:
-        if 'db' in locals() and db:
-            db.close()
+    conn = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=av[0],
+        passwd=av[1],
+        db=av[2],
+        charset="utf8",
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    conn.close()
