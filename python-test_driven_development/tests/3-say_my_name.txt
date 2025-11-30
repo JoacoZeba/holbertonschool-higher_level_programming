@@ -1,0 +1,22 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(3, 1)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(, "Zeballos")
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+    >>> say_my_name("Joaquin", "Zeballos")
+    My name is Ignacio Cabrera
+
+    >>> say_my_name("Joaquin", "Zeballos", "Cedres")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name("Bob")
+    My name is Bob 
