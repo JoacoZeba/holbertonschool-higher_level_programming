@@ -2,6 +2,7 @@
 
 """print text"""
 
+
 def text_indentation(text):
     """print text with 2 new lines after each of these characters"""
     if not isinstance(text, str):

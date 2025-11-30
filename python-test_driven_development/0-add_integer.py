@@ -2,6 +2,7 @@
 
 """module of add two integers"""
 
+
 def add_integer(a, b=98):
     """add two integers function"""
     if not isinstance(a, (int, float)):

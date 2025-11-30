@@ -2,6 +2,7 @@
 
 """divides all elements of a matrix by a given divisor"""
 
+
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix by a given divisor"""
     if (not isinstance(matrix, list) or
