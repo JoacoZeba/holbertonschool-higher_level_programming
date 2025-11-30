@@ -12,7 +12,7 @@
     SyntaxError: invalid syntax
 
     >>> say_my_name("Joaquin", "Zeballos")
-    My name is Ignacio Cabrera
+    My name is Joaquin Zeballos
 
     >>> say_my_name("Joaquin", "Zeballos", "Cedres")
     Traceback (most recent call last):
