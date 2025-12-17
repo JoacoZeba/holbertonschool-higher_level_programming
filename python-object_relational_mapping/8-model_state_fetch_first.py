@@ -1,7 +1,16 @@
 #!/usr/bin/python3
 """
 Module to retrieve and print the State object with id=1 from a MySQL database.
+
+Usage:
+    ./script.py <mysql_username> <mysql_password> <database_name>
+
+The script connects to a MySQL server on localhost at port 3306, queries the
+State table for the record with id=1, and prints its id and name.
+
+If no such State exists, it prints "Nothing".
 """
+
 
 import sys
 from sqlalchemy import create_engine
